@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cf5d6c74565de8a3e39b94ca1da75acedbb1f0d44dfc1633969477ae058badc3
-size 291
+/* GNU ld script
+   Use the shared library, but some functions are only in
+   the static library, so try that secondarily.  */
+OUTPUT_FORMAT(elf64-littleaarch64)
+GROUP ( /lib/aarch64-linux-gnu/libc.so.6 /usr/lib/aarch64-linux-gnu/libc_nonshared.a  AS_NEEDED ( /lib/ld-linux-aarch64.so.1 ) )
